@@ -269,8 +269,16 @@
   cursor: pointer;
   transition: all 0.2s;
 
+  & span {
+    margin-left: 3px;
+    transition: margin-left 0.2s;
+  }
+
   &:hover {
     color: var(--color-Grey-dark-1);
+    span {
+      margin-left: 8px;
+    }
   }
 
   &:focus {
@@ -297,7 +305,7 @@
 }
 
 ////////////////////
-//BUTTON INLINE
+//DESCRIPTION
 
 .detail {
   display: flex;
@@ -313,11 +321,6 @@
   padding: 3rem;
   flex: 0 0 60%;
   margin-right: 4.5rem;
-}
-
-.reviews {
-  background-color: yellowgreen;
-  flex: 1;
 }
 
 ////////////////////
@@ -384,5 +387,65 @@
     &:not(:last-child) {
       margin-right: -1.5rem;
     }
+  }
+}
+
+////////////////////
+//USER REVIEW
+
+.review {
+  background-color: white;
+  padding: 3rem;
+  margin-bottom: 3.5rem;
+  box-shadow: var(--shadow-light);
+  position: relative;
+  overflow: hidden;
+  &__text {
+    margin-bottom: 2rem;
+    z-index: 10;
+    position: relative;
+  }
+  &__user {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__photo {
+    box-sizing: content-box;
+    height: 4.5rem;
+    width: 4.5rem;
+    border-radius: 100px;
+    margin-right: 1.5rem;
+  }
+  &__user-box {
+  }
+  &__user-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+  }
+  &__user-date {
+    font-size: 1rem;
+    color: var(--color-Grey-dark-3);
+  }
+  &__user-score {
+    color: var(--color-primary);
+    margin-left: auto;
+    font-size: 2.2rem;
+    font-weight: 300;
+    display: block;
+  }
+
+  &::before {
+    content: "\201C";
+    font-size: 20rem;
+    font-family: sans-serif;
+    position: absolute;
+    top: -2.75rem;
+    line-height: 1;
+    left: -1rem;
+    color: var(--color-Grey-light-2);
+    z-index: 1;
   }
 }
